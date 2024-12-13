@@ -20,5 +20,5 @@ defmodule LiveGalleryWeb.Gettext do
 
   See the [Gettext Docs](https://hexdocs.pm/gettext) for detailed usage.
   """
-  use Gettext, otp_app: :live_gallery
+  use Gettext, backend: LiveGalleryWeb.Gettext
 end

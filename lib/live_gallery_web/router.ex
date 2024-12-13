@@ -17,7 +17,7 @@ defmodule LiveGalleryWeb.Router do
   scope "/", LiveGalleryWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    live "/", GalleryLive
   end
 
   # Other scopes may use custom stacks.

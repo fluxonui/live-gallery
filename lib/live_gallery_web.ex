@@ -84,11 +84,13 @@ defmodule LiveGalleryWeb do
       # HTML escaping functionality
       import Phoenix.HTML
       # Core UI components and translation
-      import LiveGalleryWeb.CoreComponents
+      import LiveGalleryWeb.SharedComponents
       import LiveGalleryWeb.Gettext
 
       # Shortcut for generating JS commands
       alias Phoenix.LiveView.JS
+
+      use Fluxon
 
       # Routes generation with the ~p sigil
       unquote(verified_routes())

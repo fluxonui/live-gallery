@@ -1,32 +1,371 @@
-<header class="px-4 sm:px-6 lg:px-8">
-  <div class="flex items-center justify-between border-b border-zinc-100 py-3 text-sm">
-    <div class="flex items-center gap-4">
-      <a href="/">
-        <img src={~p"/images/logo.svg"} width="36" />
-      </a>
-      <p class="bg-brand/5 text-brand rounded-full px-2 font-medium leading-6">
-        v<%= Application.spec(:phoenix, :vsn) %>
-      </p>
-    </div>
-    <div class="flex items-center gap-4 font-semibold leading-6 text-zinc-900">
-      <a href="https://twitter.com/elixirphoenix" class="hover:text-zinc-700">
-        @elixirphoenix
-      </a>
-      <a href="https://github.com/phoenixframework/phoenix" class="hover:text-zinc-700">
-        GitHub
-      </a>
-      <a
-        href="https://hexdocs.pm/phoenix/overview.html"
-        class="rounded-lg bg-zinc-100 px-2 py-1 hover:bg-zinc-200/80"
-      >
-        Get Started <span aria-hidden="true">&rarr;</span>
-      </a>
+<.sheet id="mobile-sidebar-nav" placement="left" class="w-full max-w-xs">
+  <div class="flex mb-6 shrink-0 items-center">
+    <img src="https://fluxonui.com/images/logos/1.svg" alt="Fluxon" class="h-7 w-auto" />
+  </div>
+
+  <.navlist heading="Dashboard">
+    <.navlink navigate="/dashboard">
+      <.icon
+        name="hero-home"
+        class="size-5 text-zinc-500 group-hover:text-zinc-700 dark:group-hover:text-zinc-200"
+      /> Overview
+    </.navlink>
+    <.navlink navigate="/dashboard/analytics">
+      <.icon
+        name="hero-chart-bar"
+        class="size-5 text-zinc-500 group-hover:text-zinc-700 dark:group-hover:text-zinc-200"
+      /> Analytics
+    </.navlink>
+    <.navlink navigate="/dashboard/reports">
+      <.icon
+        name="hero-document-chart-bar"
+        class="size-5 text-zinc-500 group-hover:text-zinc-700 dark:group-hover:text-zinc-200"
+      /> Reports
+    </.navlink>
+  </.navlist>
+
+  <.navlist heading="Sales">
+    <.navlink navigate="/customers" active>
+      <.icon
+        name="hero-users"
+        class="size-5 text-zinc-500 group-hover:text-zinc-700 dark:group-hover:text-zinc-200"
+      /> Customers
+    </.navlink>
+    <.navlink navigate="/orders">
+      <.icon
+        name="hero-shopping-cart"
+        class="size-5 text-zinc-500 group-hover:text-zinc-700 dark:group-hover:text-zinc-200"
+      /> Orders
+    </.navlink>
+    <.navlink navigate="/invoices">
+      <.icon
+        name="hero-document-text"
+        class="size-5 text-zinc-500 group-hover:text-zinc-700 dark:group-hover:text-zinc-200"
+      /> Invoices
+    </.navlink>
+    <.navlink navigate="/subscriptions">
+      <.icon
+        name="hero-arrow-path"
+        class="size-5 text-zinc-500 group-hover:text-zinc-700 dark:group-hover:text-zinc-200"
+      /> Subscriptions
+    </.navlink>
+  </.navlist>
+
+  <.navlist>
+    <.navheading class="flex justify-between items-center">
+      Products
+      <.dropdown class="p-1" placement="bottom-start">
+        <:toggle>
+          <.icon name="hero-ellipsis-vertical" />
+        </:toggle>
+        <.dropdown_link>Add Product</.dropdown_link>
+        <.dropdown_link>Import Products</.dropdown_link>
+        <.dropdown_link>Export Catalog</.dropdown_link>
+      </.dropdown>
+    </.navheading>
+
+    <.navlink navigate="/products">
+      <.icon
+        name="hero-square-3-stack-3d"
+        class="size-5 text-zinc-500 group-hover:text-zinc-700 dark:group-hover:text-zinc-200"
+      /> All Products
+    </.navlink>
+    <.navlink navigate="/products/categories">
+      <.icon
+        name="hero-folder"
+        class="size-5 text-zinc-500 group-hover:text-zinc-700 dark:group-hover:text-zinc-200"
+      /> Categories
+    </.navlink>
+    <.navlink navigate="/products/inventory">
+      <.icon
+        name="hero-cube"
+        class="size-5 text-zinc-500 group-hover:text-zinc-700 dark:group-hover:text-zinc-200"
+      /> Inventory
+    </.navlink>
+  </.navlist>
+
+  <.navlist heading="Marketing">
+    <.navlink navigate="/campaigns">
+      <.icon
+        name="hero-megaphone"
+        class="size-5 text-zinc-500 group-hover:text-zinc-700 dark:group-hover:text-zinc-200"
+      /> Campaigns
+    </.navlink>
+    <.navlink navigate="/discounts">
+      <.icon
+        name="hero-tag"
+        class="size-5 text-zinc-500 group-hover:text-zinc-700 dark:group-hover:text-zinc-200"
+      /> Discounts
+    </.navlink>
+    <.navlink navigate="/automation">
+      <.icon
+        name="hero-command-line"
+        class="size-5 text-zinc-500 group-hover:text-zinc-700 dark:group-hover:text-zinc-200"
+      /> Automation
+    </.navlink>
+  </.navlist>
+
+  <.navlist class="!mt-auto">
+    <.navlink navigate="/settings">
+      <.icon
+        name="hero-cog-6-tooth"
+        class="size-4 text-zinc-500 group-hover:text-zinc-700 dark:group-hover:text-zinc-200"
+      /> Settings
+    </.navlink>
+    <.navlink navigate="/help">
+      <.icon
+        name="hero-question-mark-circle"
+        class="size-5 text-zinc-500 group-hover:text-zinc-700 dark:group-hover:text-zinc-200"
+      /> Help & Support
+    </.navlink>
+  </.navlist>
+</.sheet>
+
+<div class="relative isolate flex min-h-svh w-full bg-white max-lg:flex-col lg:bg-zinc-100 dark:bg-zinc-900">
+  <div class="fixed inset-y-0 left-0 w-64 max-lg:hidden">
+    <div class="flex h-full flex-col">
+      <div class="flex flex-1 flex-col overflow-y-auto p-6">
+        <div class="flex shrink-0 items-center mb-8 gap-2">
+          <img src="https://fluxonui.com/images/logos/1.svg" alt="Fluxon" class="h-6 w-auto" />
+          <span class="text-xl font-extrabold text-zinc-800 dark:text-white">AcmeCo.</span>
+        </div>
+
+        <.navlist heading="Dashboard">
+          <.navlink navigate="/dashboard">
+            <.icon name="hero-home" class="size-5" /> Overview
+          </.navlink>
+          <.navlink navigate="/dashboard/analytics" active>
+            <.icon name="hero-chart-bar" class="size-5" /> Analytics
+          </.navlink>
+          <.navlink navigate="/dashboard/reports">
+            <.icon name="hero-document-chart-bar" class="size-5" /> Reports
+          </.navlink>
+        </.navlist>
+
+        <.navlist heading="Sales">
+          <.navlink phx-click={JS.toggle_attribute({"data-expanded", ""})}>
+            <.icon name="hero-users" class="size-5" /> Customers
+            <.icon
+              name="hero-chevron-right"
+              class="size-3 ml-auto text-zinc-500 [[data-expanded]_&]:rotate-90 transition-transform duration-200"
+            />
+          </.navlink>
+          <div class="grid grid-rows-[0fr] [[data-expanded]~&]:grid-rows-[1fr] transition-all duration-200">
+            <div class="overflow-hidden px-4 -mr-4 border-l ml-3">
+              <.navlist>
+                <.navlink phx-click={JS.toggle_attribute({"data-expanded", ""})}>
+                  Orders
+                  <.icon
+                    name="hero-chevron-right"
+                    class="size-3 ml-auto text-zinc-500 [[data-expanded]_&]:rotate-90 transition-transform duration-200"
+                  />
+                </.navlink>
+                <div class="grid grid-rows-[0fr] [[data-expanded]+&]:grid-rows-[1fr] transition-all duration-200">
+                  <div class="overflow-hidden px-4 border-l ml-3">
+                    <.navlist>
+                      <.navlink navigate="/invoices">
+                        Invoices
+                      </.navlink>
+                      <.navlink navigate="/orders">
+                        Orders
+                      </.navlink>
+                      <.navlink navigate="/shipments">
+                        Shipments
+                      </.navlink>
+                      <.navlink navigate="/returns">
+                        Returns
+                      </.navlink>
+                    </.navlist>
+                  </div>
+                </div>
+
+                <.navlink navigate="/customer-groups">
+                  Customer Groups
+                </.navlink>
+
+                <.navlink phx-click={JS.toggle_attribute({"data-expanded", ""})}>
+                  Segments
+                  <.icon
+                    name="hero-chevron-right"
+                    class="size-3 ml-auto text-zinc-500 [[data-expanded]_&]:rotate-90 transition-transform duration-200"
+                  />
+                </.navlink>
+                <div class="grid grid-rows-[0fr] [[data-expanded]+&]:grid-rows-[1fr] transition-all duration-200">
+                  <div class="overflow-hidden px-4 border-l ml-3">
+                    <.navlist>
+                      <.navlink navigate="/segments/active">
+                        Active
+                      </.navlink>
+                      <.navlink navigate="/segments/at-risk">
+                        At Risk
+                      </.navlink>
+                      <.navlink navigate="/segments/vip">
+                        VIP
+                      </.navlink>
+                      <.navlink navigate="/segments/custom">
+                        Custom
+                      </.navlink>
+                    </.navlist>
+                  </div>
+                </div>
+
+                <.navlink navigate="/customer-support">
+                  Support Tickets
+                </.navlink>
+
+                <.navlink navigate="/customer-feedback">
+                  Feedback
+                </.navlink>
+              </.navlist>
+            </div>
+          </div>
+          <.navlink navigate="/subscriptions">
+            <.icon name="hero-arrow-path" class="size-5" /> Subscriptions
+          </.navlink>
+        </.navlist>
+
+        <.navlist>
+          <.navheading class="flex justify-between items-center">
+            Products
+            <.dropdown class="p-1" placement="bottom-start">
+              <:toggle>
+                <.icon name="hero-ellipsis-vertical" class="size-5" />
+              </:toggle>
+              <.dropdown_link>Add Product</.dropdown_link>
+              <.dropdown_link>Import Products</.dropdown_link>
+              <.dropdown_link>Export Catalog</.dropdown_link>
+            </.dropdown>
+          </.navheading>
+          <.navlink navigate="/products">
+            <.icon name="hero-square-3-stack-3d" class="size-5" /> All Products
+          </.navlink>
+          <.navlink navigate="/products/categories">
+            <.icon name="hero-folder" class="size-5" /> Categories
+          </.navlink>
+          <.navlink navigate="/products/inventory">
+            <.icon name="hero-cube" class="size-5" /> Inventory
+          </.navlink>
+        </.navlist>
+
+        <.navlist heading="Marketing">
+          <.navlink phx-click={JS.toggle_attribute({"data-expanded", ""})}>
+            <.icon name="hero-megaphone" class="size-5" /> Campaigns
+            <.icon
+              name="hero-chevron-right"
+              class="size-3 ml-auto text-zinc-500 [[data-expanded]_&]:rotate-90 transition-transform duration-200"
+            />
+          </.navlink>
+
+          <div class="grid grid-rows-[0fr] [[data-expanded]+&]:grid-rows-[1fr] transition-all duration-200">
+            <div class="overflow-hidden px-4 border-l ml-3">
+              <.navlist>
+                <.navlink navigate="/campaigns/email">
+                  Email Campaigns
+                </.navlink>
+                <.navlink>
+                  Social Media
+                </.navlink>
+                <.navlink navigate="/campaigns/sms">
+                  SMS Campaigns
+                </.navlink>
+                <.navlink navigate="/campaigns/analytics">
+                  Campaign Analytics
+                </.navlink>
+              </.navlist>
+            </div>
+          </div>
+          <.navlink navigate="/discounts">
+            <.icon name="hero-tag" class="size-5" /> Discounts
+          </.navlink>
+          <.navlink navigate="/automation">
+            <.icon name="hero-command-line" class="size-5" /> Automation
+          </.navlink>
+        </.navlist>
+
+        <.navlist class="!mt-auto">
+          <.navlink navigate="/settings">
+            <.icon name="hero-cog-6-tooth" class="size-5" /> Settings
+          </.navlink>
+          <.navlink navigate="/help">
+            <.icon name="hero-question-mark-circle" class="size-5" /> Help & Support
+          </.navlink>
+        </.navlist>
+      </div>
+
+      <div class="max-lg:hidden flex flex-col border-t p-4 dark:border-white/10">
+        <.dropdown class="w-56">
+          <:toggle class="w-full">
+            <button class="cursor-default flex w-full items-center gap-3 rounded-lg px-2 py-2.5">
+              <div class="flex min-w-0 items-center gap-3">
+                <div class="size-10 shrink-0 rounded-lg overflow-hidden">
+                  <img class="size-full" src="https://ui-avatars.com/api/?name=John+Doe" alt="" />
+                </div>
+
+                <div class="min-w-0 text-left">
+                  <span class="block truncate text-sm font-medium text-zinc-800 dark:text-white">
+                    John Doe
+                  </span>
+                  <span class="block truncate text-xs font-normal text-zinc-500 dark:text-zinc-400">
+                    john@example.com
+                  </span>
+                </div>
+              </div>
+
+              <.icon
+                name="hero-chevron-up"
+                class="size-3 text-zinc-500 group-hover:text-zinc-700 dark:group-hover:text-zinc-200 ml-auto"
+              />
+            </button>
+          </:toggle>
+
+          <.dropdown_link navigate="">Profile</.dropdown_link>
+          <.dropdown_link navigate="">Settings</.dropdown_link>
+          <.dropdown_link navigate="">Notifications</.dropdown_link>
+          <.dropdown_link navigate="">Billing & Plans</.dropdown_link>
+          <.dropdown_link navigate="">Support</.dropdown_link>
+          <.dropdown_link navigate="">Documentation</.dropdown_link>
+          <.dropdown_link navigate="">Sign Out</.dropdown_link>
+        </.dropdown>
+      </div>
     </div>
   </div>
-</header>
-<main class="px-4 py-20 sm:px-6 lg:px-8">
-  <div class="mx-auto max-w-2xl">
-    <.flash_group flash={@flash} />
-    <%= @inner_content %>
-  </div>
-</main>
+
+  <header class="flex items-center px-4 lg:hidden border-b dark:border-white/10">
+    <div class="py-2.5">
+      <span class="relative">
+        <button
+          phx-click={Fluxon.open_dialog("mobile-sidebar-nav")}
+          class="cursor-default relative flex min-w-0 items-center gap-3 rounded-lg p-2"
+        >
+          <.icon name="hero-bars-3" class="size-6 dark:text-zinc-200" />
+        </button>
+      </span>
+    </div>
+    <div class="min-w-0 flex-1">
+      <nav class="flex flex-1 items-center gap-4 py-2.5">
+        <div class="flex items-center gap-3 ml-auto">
+          <.dropdown placement="bottom-end">
+            <:toggle class="w-full flex items-center">
+              <button class="cursor-default size-9 rounded-lg overflow-hidden">
+                <img class="size-full" src="https://ui-avatars.com/api/?name=John+Doe" alt="" />
+              </button>
+            </:toggle>
+
+            <.dropdown_link navigate="">Profile</.dropdown_link>
+            <.dropdown_link navigate="">Settings</.dropdown_link>
+            <.dropdown_link navigate="">Notifications</.dropdown_link>
+            <.dropdown_link navigate="">Billing & Plans</.dropdown_link>
+            <.dropdown_link navigate="">Support</.dropdown_link>
+            <.dropdown_link navigate="">Documentation</.dropdown_link>
+            <.dropdown_link navigate="">Sign Out</.dropdown_link>
+          </.dropdown>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main class="flex flex-1 flex-col lg:min-w-0 lg:p-2 lg:pl-64">
+    <div class="grow p-6 lg:rounded-lg lg:bg-white lg:p-10 lg:border dark:lg:bg-zinc-800 dark:lg:border-white/10">
+      {@inner_content}
+    </div>
+  </main>
+</div>
