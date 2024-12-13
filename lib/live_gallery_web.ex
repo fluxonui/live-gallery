@@ -52,7 +52,8 @@ defmodule LiveGalleryWeb do
   def live_view do
     quote do
       use Phoenix.LiveView,
-        layout: {LiveGalleryWeb.Layouts, :app}
+        layout: {LiveGalleryWeb.Layouts, :app},
+        container: {:div, class: "contents"}
 
       unquote(html_helpers())
     end

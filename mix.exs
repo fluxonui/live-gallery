@@ -44,12 +44,7 @@ defmodule LiveGallery.MixProject do
       {:esbuild, "~> 0.8", runtime: Mix.env() == :dev},
       {:tailwind, "~> 0.2", runtime: Mix.env() == :dev},
       {:heroicons,
-       github: "tailwindlabs/heroicons",
-       tag: "v2.1.1",
-       sparse: "optimized",
-       app: false,
-       compile: false,
-       depth: 1},
+       github: "tailwindlabs/heroicons", tag: "v2.1.1", sparse: "optimized", app: false, compile: false, depth: 1},
       {:swoosh, "~> 1.5"},
       {:finch, "~> 0.13"},
       {:telemetry_metrics, "~> 1.0"},
@@ -58,7 +53,11 @@ defmodule LiveGallery.MixProject do
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.1.1"},
       {:bandit, "~> 1.5"},
-      {:fluxon, "~> 1.0.7", repo: :fluxon}
+      {:fluxon, "~> 1.0.7", repo: :fluxon},
+      {:ex_aws, "~> 2.5.8"},
+      {:ex_aws_s3, "~> 2.5"},
+      {:hackney, "~> 1.20.1"},
+      {:sweet_xml, "~> 0.7.4"}
     ]
   end
 
