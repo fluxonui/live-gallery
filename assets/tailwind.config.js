@@ -17,10 +17,12 @@ module.exports = {
       colors: {
         brand: "#FD4F00",
       },
+      fontFamily: {
+        serif: ["Domine", "serif"],
+      },
     },
   },
   plugins: [
-    require("@tailwindcss/forms"),
     // Allows prefixing tailwind classes with LiveView classes to add rules
     // only when LiveView classes are applied, for example:
     //

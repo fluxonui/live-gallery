@@ -21,8 +21,8 @@ defmodule LiveGalleryWeb.SharedComponents do
 
     ~H"""
     <div class={["flex items-center justify-center", @class]}>
-      <svg viewBox="0 0 290 290" class="transform -rotate-90">
-        <circle cx="145" cy="145" r="120" stroke-width="20" fill="transparent" class="stroke-white/30" />
+      <svg viewBox="0 0 290 290" class="w-full h-full transform -rotate-90">
+        <circle cx="145" cy="145" r="120" stroke-width="20" fill="transparent" class="stroke-white opacity-30" />
 
         <circle
           cx="145"

@@ -3,120 +3,57 @@
     <img src="https://fluxonui.com/images/logos/1.svg" alt="Fluxon" class="h-7 w-auto" />
   </div>
 
-  <.navlist heading="Dashboard">
-    <.navlink navigate="/dashboard">
-      <.icon
-        name="hero-home"
-        class="size-5 text-zinc-500 group-hover:text-zinc-700 dark:group-hover:text-zinc-200"
-      /> Overview
+  <.navlist heading="Gallery">
+    <.navlink navigate="/albums">
+      <.icon name="hero-photo" class="size-5" /> My Albums
     </.navlink>
-    <.navlink navigate="/dashboard/analytics">
-      <.icon
-        name="hero-chart-bar"
-        class="size-5 text-zinc-500 group-hover:text-zinc-700 dark:group-hover:text-zinc-200"
-      /> Analytics
+    <.navlink navigate="/shared">
+      <.icon name="hero-share" class="size-5" /> Shared with Me
     </.navlink>
-    <.navlink navigate="/dashboard/reports">
-      <.icon
-        name="hero-document-chart-bar"
-        class="size-5 text-zinc-500 group-hover:text-zinc-700 dark:group-hover:text-zinc-200"
-      /> Reports
+    <.navlink navigate="/favorites">
+      <.icon name="hero-heart" class="size-5" /> Favorites
     </.navlink>
   </.navlist>
 
-  <.navlist heading="Sales">
-    <.navlink navigate="/customers" active>
-      <.icon
-        name="hero-users"
-        class="size-5 text-zinc-500 group-hover:text-zinc-700 dark:group-hover:text-zinc-200"
-      /> Customers
+  <.navlist heading="Library">
+    <.navlink navigate="/photos">
+      <.icon name="hero-photo" class="size-5" /> All Photos
     </.navlink>
-    <.navlink navigate="/orders">
-      <.icon
-        name="hero-shopping-cart"
-        class="size-5 text-zinc-500 group-hover:text-zinc-700 dark:group-hover:text-zinc-200"
-      /> Orders
+    <.navlink navigate="/collections">
+      <.icon name="hero-folder" class="size-5" /> Collections
     </.navlink>
-    <.navlink navigate="/invoices">
-      <.icon
-        name="hero-document-text"
-        class="size-5 text-zinc-500 group-hover:text-zinc-700 dark:group-hover:text-zinc-200"
-      /> Invoices
-    </.navlink>
-    <.navlink navigate="/subscriptions">
-      <.icon
-        name="hero-arrow-path"
-        class="size-5 text-zinc-500 group-hover:text-zinc-700 dark:group-hover:text-zinc-200"
-      /> Subscriptions
+    <.navlink navigate="/tags">
+      <.icon name="hero-tag" class="size-5" /> Tags
     </.navlink>
   </.navlist>
 
-  <.navlist>
-    <.navheading class="flex justify-between items-center">
-      Products
-      <.dropdown class="p-1" placement="bottom-start">
-        <:toggle>
-          <.icon name="hero-ellipsis-vertical" />
-        </:toggle>
-        <.dropdown_link>Add Product</.dropdown_link>
-        <.dropdown_link>Import Products</.dropdown_link>
-        <.dropdown_link>Export Catalog</.dropdown_link>
-      </.dropdown>
-    </.navheading>
-
-    <.navlink navigate="/products">
-      <.icon
-        name="hero-square-3-stack-3d"
-        class="size-5 text-zinc-500 group-hover:text-zinc-700 dark:group-hover:text-zinc-200"
-      /> All Products
+  <.navlist heading="Sharing">
+    <.navlink navigate="/shared-albums">
+      <.icon name="hero-globe-alt" class="size-5" /> Public Albums
     </.navlink>
-    <.navlink navigate="/products/categories">
-      <.icon
-        name="hero-folder"
-        class="size-5 text-zinc-500 group-hover:text-zinc-700 dark:group-hover:text-zinc-200"
-      /> Categories
+    <.navlink navigate="/links">
+      <.icon name="hero-link" class="size-5" /> Shared Links
     </.navlink>
-    <.navlink navigate="/products/inventory">
-      <.icon
-        name="hero-cube"
-        class="size-5 text-zinc-500 group-hover:text-zinc-700 dark:group-hover:text-zinc-200"
-      /> Inventory
+    <.navlink navigate="/collaborators">
+      <.icon name="hero-users" class="size-5" /> Collaborators
     </.navlink>
   </.navlist>
 
-  <.navlist heading="Marketing">
-    <.navlink navigate="/campaigns">
-      <.icon
-        name="hero-megaphone"
-        class="size-5 text-zinc-500 group-hover:text-zinc-700 dark:group-hover:text-zinc-200"
-      /> Campaigns
+  <.navlist heading="Storage">
+    <.navlink navigate="/trash">
+      <.icon name="hero-trash" class="size-5" /> Trash
     </.navlink>
-    <.navlink navigate="/discounts">
-      <.icon
-        name="hero-tag"
-        class="size-5 text-zinc-500 group-hover:text-zinc-700 dark:group-hover:text-zinc-200"
-      /> Discounts
-    </.navlink>
-    <.navlink navigate="/automation">
-      <.icon
-        name="hero-command-line"
-        class="size-5 text-zinc-500 group-hover:text-zinc-700 dark:group-hover:text-zinc-200"
-      /> Automation
+    <.navlink navigate="/storage">
+      <.icon name="hero-cloud" class="size-5" /> Storage Usage
     </.navlink>
   </.navlist>
 
   <.navlist class="!mt-auto">
     <.navlink navigate="/settings">
-      <.icon
-        name="hero-cog-6-tooth"
-        class="size-4 text-zinc-500 group-hover:text-zinc-700 dark:group-hover:text-zinc-200"
-      /> Settings
+      <.icon name="hero-cog-6-tooth" class="size-5" /> Settings
     </.navlink>
     <.navlink navigate="/help">
-      <.icon
-        name="hero-question-mark-circle"
-        class="size-5 text-zinc-500 group-hover:text-zinc-700 dark:group-hover:text-zinc-200"
-      /> Help & Support
+      <.icon name="hero-question-mark-circle" class="size-5" /> Help & Support
     </.navlink>
   </.navlist>
 </.sheet>
@@ -127,167 +64,39 @@
       <div class="flex flex-1 flex-col overflow-y-auto p-6">
         <div class="flex shrink-0 items-center mb-8 gap-2">
           <img src="https://fluxonui.com/images/logos/1.svg" alt="Fluxon" class="h-6 w-auto" />
-          <span class="text-xl font-extrabold text-zinc-800 dark:text-white">AcmeCo.</span>
+          <span class="text-xl font-extrabold text-zinc-800 dark:text-white">LiveGallery</span>
         </div>
 
-        <.navlist heading="Dashboard">
-          <.navlink navigate="/dashboard">
-            <.icon name="hero-home" class="size-5" /> Overview
+        <.navlist heading="Gallery">
+          <.navlink navigate="/albums">
+            <.icon name="hero-photo" class="size-5" /> My Albums
           </.navlink>
-          <.navlink navigate="/dashboard/analytics" active>
-            <.icon name="hero-chart-bar" class="size-5" /> Analytics
+          <.navlink navigate="/shared">
+            <.icon name="hero-share" class="size-5" /> Shared with Me
           </.navlink>
-          <.navlink navigate="/dashboard/reports">
-            <.icon name="hero-document-chart-bar" class="size-5" /> Reports
-          </.navlink>
-        </.navlist>
-
-        <.navlist heading="Sales">
-          <.navlink phx-click={JS.toggle_attribute({"data-expanded", ""})}>
-            <.icon name="hero-users" class="size-5" /> Customers
-            <.icon
-              name="hero-chevron-right"
-              class="size-3 ml-auto text-zinc-500 [[data-expanded]_&]:rotate-90 transition-transform duration-200"
-            />
-          </.navlink>
-          <div class="grid grid-rows-[0fr] [[data-expanded]~&]:grid-rows-[1fr] transition-all duration-200">
-            <div class="overflow-hidden px-4 -mr-4 border-l ml-3">
-              <.navlist>
-                <.navlink phx-click={JS.toggle_attribute({"data-expanded", ""})}>
-                  Orders
-                  <.icon
-                    name="hero-chevron-right"
-                    class="size-3 ml-auto text-zinc-500 [[data-expanded]_&]:rotate-90 transition-transform duration-200"
-                  />
-                </.navlink>
-                <div class="grid grid-rows-[0fr] [[data-expanded]+&]:grid-rows-[1fr] transition-all duration-200">
-                  <div class="overflow-hidden px-4 border-l ml-3">
-                    <.navlist>
-                      <.navlink navigate="/invoices">
-                        Invoices
-                      </.navlink>
-                      <.navlink navigate="/orders">
-                        Orders
-                      </.navlink>
-                      <.navlink navigate="/shipments">
-                        Shipments
-                      </.navlink>
-                      <.navlink navigate="/returns">
-                        Returns
-                      </.navlink>
-                    </.navlist>
-                  </div>
-                </div>
-
-                <.navlink navigate="/customer-groups">
-                  Customer Groups
-                </.navlink>
-
-                <.navlink phx-click={JS.toggle_attribute({"data-expanded", ""})}>
-                  Segments
-                  <.icon
-                    name="hero-chevron-right"
-                    class="size-3 ml-auto text-zinc-500 [[data-expanded]_&]:rotate-90 transition-transform duration-200"
-                  />
-                </.navlink>
-                <div class="grid grid-rows-[0fr] [[data-expanded]+&]:grid-rows-[1fr] transition-all duration-200">
-                  <div class="overflow-hidden px-4 border-l ml-3">
-                    <.navlist>
-                      <.navlink navigate="/segments/active">
-                        Active
-                      </.navlink>
-                      <.navlink navigate="/segments/at-risk">
-                        At Risk
-                      </.navlink>
-                      <.navlink navigate="/segments/vip">
-                        VIP
-                      </.navlink>
-                      <.navlink navigate="/segments/custom">
-                        Custom
-                      </.navlink>
-                    </.navlist>
-                  </div>
-                </div>
-
-                <.navlink navigate="/customer-support">
-                  Support Tickets
-                </.navlink>
-
-                <.navlink navigate="/customer-feedback">
-                  Feedback
-                </.navlink>
-              </.navlist>
-            </div>
-          </div>
-          <.navlink navigate="/subscriptions">
-            <.icon name="hero-arrow-path" class="size-5" /> Subscriptions
+          <.navlink navigate="/favorites">
+            <.icon name="hero-heart" class="size-5" /> Favorites
           </.navlink>
         </.navlist>
 
-        <.navlist>
-          <.navheading class="flex justify-between items-center">
-            Products
-            <.dropdown class="p-1" placement="bottom-start">
-              <:toggle>
-                <.icon name="hero-ellipsis-vertical" class="size-5" />
-              </:toggle>
-              <.dropdown_link>Add Product</.dropdown_link>
-              <.dropdown_link>Import Products</.dropdown_link>
-              <.dropdown_link>Export Catalog</.dropdown_link>
-            </.dropdown>
-          </.navheading>
-          <.navlink navigate="/products">
-            <.icon name="hero-square-3-stack-3d" class="size-5" /> All Products
+        <.navlist heading="Library">
+          <.navlink navigate="/photos">
+            <.icon name="hero-photo" class="size-5" /> All Photos
           </.navlink>
-          <.navlink navigate="/products/categories">
-            <.icon name="hero-folder" class="size-5" /> Categories
+          <.navlink navigate="/collections">
+            <.icon name="hero-folder" class="size-5" /> Collections
           </.navlink>
-          <.navlink navigate="/products/inventory">
-            <.icon name="hero-cube" class="size-5" /> Inventory
+          <.navlink navigate="/tags">
+            <.icon name="hero-tag" class="size-5" /> Tags
           </.navlink>
         </.navlist>
 
-        <.navlist heading="Marketing">
-          <.navlink phx-click={JS.toggle_attribute({"data-expanded", ""})}>
-            <.icon name="hero-megaphone" class="size-5" /> Campaigns
-            <.icon
-              name="hero-chevron-right"
-              class="size-3 ml-auto text-zinc-500 [[data-expanded]_&]:rotate-90 transition-transform duration-200"
-            />
+        <.navlist heading="Storage">
+          <.navlink navigate="/trash">
+            <.icon name="hero-trash" class="size-5" /> Trash
           </.navlink>
-
-          <div class="grid grid-rows-[0fr] [[data-expanded]+&]:grid-rows-[1fr] transition-all duration-200">
-            <div class="overflow-hidden px-4 border-l ml-3">
-              <.navlist>
-                <.navlink navigate="/campaigns/email">
-                  Email Campaigns
-                </.navlink>
-                <.navlink>
-                  Social Media
-                </.navlink>
-                <.navlink navigate="/campaigns/sms">
-                  SMS Campaigns
-                </.navlink>
-                <.navlink navigate="/campaigns/analytics">
-                  Campaign Analytics
-                </.navlink>
-              </.navlist>
-            </div>
-          </div>
-          <.navlink navigate="/discounts">
-            <.icon name="hero-tag" class="size-5" /> Discounts
-          </.navlink>
-          <.navlink navigate="/automation">
-            <.icon name="hero-command-line" class="size-5" /> Automation
-          </.navlink>
-        </.navlist>
-
-        <.navlist class="!mt-auto">
-          <.navlink navigate="/settings">
-            <.icon name="hero-cog-6-tooth" class="size-5" /> Settings
-          </.navlink>
-          <.navlink navigate="/help">
-            <.icon name="hero-question-mark-circle" class="size-5" /> Help & Support
+          <.navlink navigate="/storage">
+            <.icon name="hero-cloud" class="size-5" /> Storage Usage
           </.navlink>
         </.navlist>
       </div>
