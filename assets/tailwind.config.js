@@ -19,6 +19,7 @@ module.exports = {
       },
       fontFamily: {
         serif: ["Domine", "serif"],
+        sans: ["Geist", "sans-serif"],
       },
     },
   },
