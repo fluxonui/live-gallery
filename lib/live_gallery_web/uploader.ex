@@ -35,7 +35,7 @@ defmodule LiveGalleryWeb.Uploader do
 
   def presign_upload(entry) do
     config = ExAws.Config.new(:s3)
-    bucket = "live-gallerys"
+    bucket = "live-gallery"
     key = "public/#{entry.client_name}"
 
     {:ok, url} =
