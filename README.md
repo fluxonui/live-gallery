@@ -1,18 +1,7 @@
 # LiveGallery
 
-To start your Phoenix server:
+This is a small PoC Phoenix app for uploading photos with progress using LiveView. See [this tweet ](https://x.com/andrielfn/status/1867701696618803596) for more context.
 
-  * Run `mix setup` to install and setup dependencies
-  * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
+https://github.com/user-attachments/assets/cca8adfd-a39d-4e8a-a3b4-3f6b130ffa7c
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
-
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
-
-## Learn more
-
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+PS: This app is using [Fluxon UI](https://fluxonui.com/), a paid UI library for Phoenix LiveView, so unless you have a valid license, you won't be able to run it locally.
