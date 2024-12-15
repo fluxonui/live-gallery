@@ -24,10 +24,10 @@ defmodule LiveGalleryWeb.AlbumLive do
 
   def render(assigns) do
     ~H"""
-    <div class="flex h-full" phx-drop-target={@uploads.photos.ref}>
+    <div class="flex h-full dark:bg-zinc-900" phx-drop-target={@uploads.photos.ref}>
       <div class="flex-1 p-8">
         <div class="flex items-center justify-between">
-          <h1 class="text-2xl font-bold flex items-center gap-x-2">
+          <h1 class="text-2xl font-bold flex items-center gap-x-2 dark:text-white">
             <span class="font-serif">{@album.name}</span>
             <.badge :if={@album.access == "private"} class="px-1.5 py-1">
               <.icon name="hero-lock-closed-solid" class="icon" /> Private
@@ -66,15 +66,16 @@ defmodule LiveGalleryWeb.AlbumLive do
           </div>
         </div>
 
-        <div class="grid grid-cols-5 gap-4 mt-10">
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 mt-10">
           <form class="relative aspect-square" phx-change="validate" phx-submit="upload-photos">
             <.live_file_input upload={@uploads.photos} class="absolute inset-0 w-full h-full opacity-0 cursor-pointer peer" />
-            <div class="aspect-square flex items-center flex-col px-6 text-center justify-center border-2 border-dashed border-gray-300 rounded-lg hover:bg-gray-50 transition-colors peer-hover:border-gray-400">
-              <.icon name="hero-camera" class="size-9 text-gray-300 pointer-events-none" />
-              <span class="font-medium mt-2">Select images</span>
-              <p class="text-sm text-gray-500">or drag photos from your computer</p>
+            <div class="aspect-square flex items-center flex-col px-6 text-center justify-center border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-zinc-800 transition-colors peer-hover:border-gray-400 dark:peer-hover:border-gray-500">
+              <.icon name="hero-camera" class="size-9 text-gray-300 dark:text-gray-500 pointer-events-none" />
+              <span class="font-medium mt-2 dark:text-white">Select images</span>
+              <p class="text-sm text-gray-500 dark:text-gray-400">or drag photos from your computer</p>
             </div>
           </form>
+
           <article :for={entry <- @uploads.photos.entries} class="overflow-hidden rounded-lg relative">
             <figure class="aspect-square">
               <.live_img_preview entry={entry} class="w-full h-full object-cover" />
@@ -88,30 +89,34 @@ defmodule LiveGalleryWeb.AlbumLive do
           </article>
         </div>
       </div>
-
-      <.sheet placement="right" id="album-settings" class="max-w-sm w-full border-l h-full p-10">
-        <h2 class="text-xl font-bold">Settings</h2>
-
-        <.form :let={f} for={@album_form} phx-submit="save-album-name" class="mt-6">
-          <h2 class="text-lg font-semibold font-serif">Album name</h2>
-          <div class="flex gap-x-2 mt-1">
-            <div class="w-full"><.input field={f[:name]} /></div>
-            <.button variant="solid">Save</.button>
-          </div>
-        </.form>
-
-        <.form :let={f} for={@album_form} phx-change="update-album-access" class="mt-6">
-          <h2 class="text-lg font-semibold">Access</h2>
-          <p class="text-sm text-gray-500">Control who can view and download your photos.</p>
-          <div class="flex gap-x-2 mt-4">
-            <.radio_group field={f[:access]}>
-              <:radio value="public" label="Public" description="Anyone can view and download your photos." />
-              <:radio value="private" label="Private" description="Only you can view and download your photos." />
-            </.radio_group>
-          </div>
-        </.form>
-      </.sheet>
     </div>
+
+    <.sheet
+      placement="right"
+      id="album-settings"
+      class="max-w-sm w-full border-l dark:border-zinc-700 h-full p-10 dark:bg-zinc-900"
+    >
+      <h2 class="text-xl font-bold dark:text-white">Settings</h2>
+
+      <.form :let={f} for={@album_form} phx-submit="save-album-name" class="mt-6">
+        <h2 class="text-lg font-semibold font-serif dark:text-white">Album name</h2>
+        <div class="flex gap-x-2 mt-1">
+          <div class="w-full"><.input field={f[:name]} /></div>
+          <.button variant="solid">Save</.button>
+        </div>
+      </.form>
+
+      <.form :let={f} for={@album_form} phx-change="update-album-access" class="mt-6">
+        <h2 class="text-lg font-semibold dark:text-white">Access</h2>
+        <p class="text-sm text-gray-500 dark:text-gray-400">Control who can view and download your photos.</p>
+        <div class="flex gap-x-2 mt-4">
+          <.radio_group field={f[:access]}>
+            <:radio value="public" label="Public" description="Anyone can view and download your photos." />
+            <:radio value="private" label="Private" description="Only you can view and download your photos." />
+          </.radio_group>
+        </div>
+      </.form>
+    </.sheet>
     """
   end
 
